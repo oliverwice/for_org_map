@@ -1,0 +1,142 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #222;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+#map {
+  height: calc(100vh - 70px);
+  width: 100%;
+}
+
+/* Попап на карте */
+.popup {
+  max-width: 260px;
+}
+
+.popup h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #111;
+}
+
+.popup img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.popup p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.4;
+}
+
+.popup .btn-gallery {
+  margin-top: 8px;
+  width: 100%;
+  padding: 8px;
+  background: #2c7be5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.popup .btn-gallery:hover { background: #1a5fb4; }
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal.hidden { display: none; }
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #888;
+}
+
+.modal-close:hover { color: #000; }
+
+.modal-content h2 {
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.modal-gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.leaflet-control-attribution .leaflet-attribution-flag {
+  display: none !important;
+}
+
+.modal-gallery img:hover { transform: scale(1.03); }
+
+#modal-info {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .header h1 { font-size: 16px; }
+  .filter-btn { padding: 6px 12px; font-size: 13px; }
+}
